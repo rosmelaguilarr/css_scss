@@ -16,6 +16,7 @@ body {
   align-items: center;
   height: 100vh;
   margin-top: 60px;
+  padding-top: 1rem;
 }
 .container.home {
   background-image: url(../img/blob.svg);
@@ -24,6 +25,7 @@ body {
   background-size: contain;
   margin-top: 0;
   justify-content: center;
+  padding-top: 0;
 }
 
 /* ============ HOME ============ */
