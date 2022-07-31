@@ -1,0 +1,244 @@
+@use 'base';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: base.$font;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  margin-top: 60px;
+
+  &.home {
+    background-image: url(../img/blob.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: 0;
+    justify-content: center;
+  }
+}
+
+/* ============ HOME ============ */
+.home {
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    width: 95%;
+    gap: 1.5rem;
+    border-radius: 12px;
+  }
+
+  &__logo {
+    margin-bottom: 4rem;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    background-color: base.$primary-color;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    position: relative;
+    transition: transform .3s ease;
+    border-left: 8px solid base.$secondary-color;
+
+    span {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0%;
+      height: 100%;
+      background-color: base.$secondary-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: all .3s ease;
+    }
+
+    &:hover::before {
+      opacity: 1;
+      width: calc(100% - 8px);
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+}
+
+/* ============ MENU ============ */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  background-color: #e8edfc;
+  gap: 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  img {
+    width: 90px;
+    display: block;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 0.2rem;
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: base.$primary-color;
+    padding: .3rem .5rem;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  &__link:hover,
+  &__link--active {
+    background-color: base.$secondary-color;
+    color: #fff;
+  }
+}
+
+/* ============ CONTACT US / LOGIN ============ */
+.title {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: 400;
+  font-size: 1.5rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60%;
+    height: 3px;
+    transform: translate(-50%);
+    background-color: base.$secondary-color;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  background-color: base.$primary-color;
+  gap: 1.2rem;
+  border-radius: 12px;
+  color: #fff;
+  max-width: 350px;
+  width: 95%;
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+      position: relative;
+    }
+
+    &__label {
+      color: rgb(255 255 255 /.5);
+    }
+
+    &__input,
+    &__btn {
+      border: none;
+      outline: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.1rem;
+      border-radius: 5px;
+    }
+
+    &__input {
+      width: 100%;
+      padding: .6rem .8rem .6rem 2.5rem;
+    }
+
+    &__input {
+      &--textarea {
+        resize: none;
+        padding-left: 8px;
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__btn {
+      width: 150px;
+      height: 50px;
+      margin: auto;
+      padding: 0 .5rem;
+      cursor: pointer;
+      background-color: base.$secondary-color;
+      color: #fff;
+      font-weight: 700;
+      transition: all .3s ease;
+      margin-top: 1rem;
+    }
+
+    &__btn:active {
+      transform: scale(.95);
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .home {
+    background-color: base.$bg;
+  }
+
+  .navbar {
+    height: 80px;
+    flex-wrap: wrap;
+    gap: .2rem;
+  }
+
+  .container {
+    margin-top: 80px;
+  }
+
+  .form,
+  .menu__link,
+  .form-item__btn {
+    border-radius: unset;
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo-lanur.webp" alt="logo lanur"></a>
+        </div>
+        <div class="menu">
+            <a href="index.html" class="menu__link">Home</a>
+            <a href="contact.html" class="menu__link menu__link--active">Contact us</a>
+            <a href="login.html" class="menu__link">Login</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="title">Contact us</h1>
+        <form class="form">
+            <div class="form-item">
+                <label for="name" class="form-item__label">Name</label>
+                <div class="form-item__container">
+                    <input type="text" id="name" class="form-item__input" focus>
+                    <img src="img/user.svg" alt="user" class="form-item__icon">
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="email" class="form-item__label">Email</label>
+                <div class="form-item__container">
+                    <input type="email" id="email" class="form-item__input">
+                    <img src="img/email.svg" alt="email" class="form-item__icon">
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="description" class="form-item__label">What are you looking for?</label>
+                <div class="form-item__container">
+                    <textarea id="description"  rows="3" class="form-item__input form-item__input--textarea"></textarea>
+                </div>
+            </div>
+            <div class="form-item">
+                <button type="button" class="form-item__btn">Send</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
